@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sozialraumanalyse Coswig</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Verstecke alle Inhalte bis Passwort eingegeben wurde */
+        body > *:not(#password-overlay) {
+            display: none !important;
+        }
+        
+        /* Rest der CSS-Regeln... */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body style="overflow: hidden;">
+    <div id="password-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(44,62,80,0.97); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <form id="password-form" style="background: #fff; border-radius: 18px; box-shadow: 0 8px 40px rgba(44,62,80,0.18); padding: 48px 36px 36px 36px; display: flex; flex-direction: column; align-items: center; min-width: 320px;">
+            <h2 style="margin-bottom: 24px; color: #2c3e50;">Passwort erforderlich</h2>
+            <input id="password-input" type="password" placeholder="Passwort" style="padding: 12px 18px; font-size: 1.1rem; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 18px; width: 220px; text-align: center;" autofocus />
+            <button type="submit" style="padding: 10px 32px; font-size: 1.1rem; background: linear-gradient(90deg, #667eea, #764ba2); color: white; border: none; border-radius: 8px; cursor: pointer;">Login</button>
+            <div id="password-error" style="color: #e74c3c; margin-top: 16px; display: none;">Falsches Passwort. Bitte versuche es erneut.</div>
+            <div style="margin-top: 18px; color: #888; font-size: 0.98rem;">Diese Präsentation ist passwortgeschützt.</div>
+        </form>
+    </div>
+    <nav class="presentation-nav">
+        <div class="nav-controls">
+            <button class="nav-btn" onclick="previousSlide()"><i class="fas fa-chevron-left"></i></button>
+            <span class="slide-counter">1 / 12</span>
+            <button class="nav-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="nav-indicators">
+            <div class="indicator active" onclick="goToSlide(0)"></div>
+            <div class="indicator" onclick="goToSlide(1)"></div>
+            <div class="indicator" onclick="goToSlide(2)"></div>
+            <div class="indicator" onclick="goToSlide(3)"></div>
+            <div class="indicator" onclick="goToSlide(4)"></div>
+            <div class="indicator" onclick="goToSlide(5)"></div>
+            <div class="indicator" onclick="goToSlide(6)"></div>
+            <div class="indicator" onclick="goToSlide(7)"></div>
+            <div class="indicator" onclick="goToSlide(8)"></div>
+            <div class="indicator" onclick="goToSlide(9)"></div>
+            <div class="indicator" onclick="goToSlide(10)"></div>
+            <div class="indicator" onclick="goToSlide(11)"></div>
+            <div class="indicator" onclick="goToSlide(12)"></div>
+        </div>
+    </nav>
+
+    <div class="presentation-container">
+        <!-- Slide 1: Titelfolie -->
+        <section class="slide active title-slide">
+            <div class="slide-content">
+                <div class="title-content">
+                    <h1 class="main-title">Stadtteil- und Sozialraumanalyse Coswig – Fokus auf ältere Menschen</h1>
+                    <h2 class="subtitle">Potenziale erkennen, Teilhabe stärken</h2>
+                    <div class="title-details">
+                        <p class="presenters">Vorgetragen von: Liliane, Lennard, Laura </p>
+                        <p class="date">Datum: 26.06.2025</p>
+                        <p class="university">Universität: SRH University of Applied Sciences</p>
+                    </div>
+                </div>
+                <div class="title-visual">
+                    <img src="public/Coswig_in_MEI.svg.png" alt="Stadtzentrum Coswig" class="title-image" style="max-width: 960px; max-height: 960px; border-radius: 16px; box-shadow: 0 4px 24px rgba(102,126,234,0.12); margin-top: 12px;" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Coswig – Lage & Überblick -->
+        <section class="slide">
+            <div class="slide-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <h1 class="slide-title">Coswig – Lage & Überblick</h1>
+                <p style="max-width: 700px; text-align: center; margin-bottom: 30px; color: #444; font-size: 1.2rem;">Coswig liegt im Herzen Sachsens zwischen Dresden und Meißen. Die Karte zeigt die zentrale Lage, die gute Anbindung und die wichtigsten Stadtteile auf einen Blick.</p>
+                <img src="karte.png" alt="Karte von Coswig" style="max-width: 95vw; max-height: 50vh; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); margin-top: 10px;" />
+            </div>
+        </section>
+
+        <!-- Slide 3: Coswig im Überblick (mit den vier Feature-Cards) -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Coswig im Überblick</h1>
+                <p class="slide-intro">Coswig ist eine Stadt im Elbtal zwischen Dresden und Meißen mit rund 20.400 Einwohnern. Die Bevölkerung ist überdurchschnittlich alt, die Eigentümerquote hoch. Die Stadt bietet eine hohe Lebensqualität und stabile Wohnverhältnisse.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-city"></i></div>
+                        <h3>Stadtprofil</h3>
+                        <p>25,9 km², Elbtal, Landkreis Meißen</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-users"></i></div>
+                        <h3>Einwohner</h3>
+                        <p>ca. 20.400 (2023)</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-clock"></i></div>
+                        <h3>Altersstruktur</h3>
+                        <p>Ø 49 Jahre, 1/3 über 65</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-home"></i></div>
+                        <h3>Eigentümerquote</h3>
+                        <p>über 61 %</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Soziale Infrastruktur – Beispiel -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Soziale Infrastruktur – Beispiel</h1>
+                <div style="display: flex; justify-content: center; margin-top: 32px;">
+                    <img src="public/IMG_1722.PNG" alt="Soziale Infrastruktur Coswig" style="max-width: 480px; width: 100%; border-radius: 18px; box-shadow: 0 4px 24px rgba(102,126,234,0.12);" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Medizin & Pflege -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Medizin & Pflege</h1>
+                <p class="slide-intro">Coswig verfügt über ein modernes Fachkrankenhaus, ein Herzzentrum und zahlreiche Fachärzte. Für ältere Menschen gibt es mehrere Pflegeheime, betreutes Wohnen und ein breites Angebot an ambulanten Diensten.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-hospital"></i></div>
+                        <h3>Krankenhäuser</h3>
+                        <p>Fachkrankenhaus, Herzzentrum, MVZ</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-nurse"></i></div>
+                        <h3>Pflege & Betreuung</h3>
+                        <p>Pflegeheime, betreutes Wohnen, ambulante Dienste</p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 32px;">
+                    <img src="public/PHOTO-2025-06-25-18-18-14.jpg" alt="Krankenhaus Coswig" style="max-width: 480px; width: 100%; border-radius: 18px; box-shadow: 0 4px 24px rgba(102,126,234,0.12);" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Mobilität & Nahversorgung -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Mobilität & Nahversorgung</h1>
+                <p class="slide-intro">Die Stadt ist durch Bahn, Bus und Fähre gut angebunden. Supermärkte, Drogerien und soziale Einrichtungen sichern die Nahversorgung. Barrierefreiheit ist an vielen Stellen gegeben.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-bus"></i></div>
+                        <h3>ÖPNV & Mobilität</h3>
+                        <p>Bahn, Bus, Fähre, barrierefrei</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <h3>Nahversorgung</h3>
+                        <p>Supermärkte, Drogerien, Tafel</p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 32px;">
+                    <img src="public/IMG_2808.JPG" alt="Bus Coswig" style="max-width: 320px; width: 100%; border-radius: 18px; box-shadow: 0 4px 24px rgba(102,126,234,0.12);" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Soziale Angebote & Freizeit -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Soziale Angebote & Freizeit</h1>
+                <p class="slide-intro">Das gesellschaftliche Leben in Coswig ist vielfältig: Seniorentreffs, Ehrenamt und Kulturangebote fördern Begegnung und Teilhabe. Besonders aktiv sind die Nachbarschaftshilfe und das Quartiersmanagement.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
+                        <h3>Ehrenamt & Treffpunkte</h3>
+                        <p>Seniorentreffs, Nachbarschaftshilfe, Quartiersmanagement</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-music"></i></div>
+                        <h3>Kultur & Freizeit</h3>
+                        <p>Kultursommer, Konzerte, VHS</p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 32px;">
+                    <img src="public/Börse.JPG" alt="Börse Coswig" style="max-width: 480px; width: 100%; border-radius: 18px; box-shadow: 0 4px 24px rgba(102,126,234,0.12);" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Alltag älterer Menschen -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Alltag älterer Menschen</h1>
+                <p class="slide-intro">Der Alltag vieler Senior:innen ist geprägt von festen Strukturen, gemeinsamen Aktivitäten und regelmäßigen Begegnungen. Angebote wie Gymnastik, Ausflüge und Kaffeerunden fördern die Lebensqualität.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-coffee"></i></div>
+                        <h3>Struktur & Teilhabe</h3>
+                        <p>Feste Tagesstruktur, Begegnung, Aktivitäten</p>
+                    </div>
+                </div>
+                <div class="angebote-bilder-grid">
+                    <div class="angebot-bild-card">
+                        <img src="angebote/Angebot 1.jpg" alt="Angebot 1" class="angebot-bild">
+                        <div class="angebot-caption">Angebot 1</div>
+                    </div>
+                    <div class="angebot-bild-card">
+                        <img src="angebote/Angebot 2.jpg" alt="Angebot 2" class="angebot-bild">
+                        <div class="angebot-caption">Angebot 2</div>
+                    </div>
+                </div>
+                <div style="text-align:center; color:#888; font-size:0.98rem; margin-top:10px;">Hinweis: Bei kleineren Bildschirmen können Sie innerhalb des Bereichs scrollen, um alle Angebote zu sehen.</div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Stärken der Senioreninfrastruktur -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Stärken</h1>
+                <p class="slide-intro">Coswig überzeugt durch ein breites Angebot, barrierefreie Strukturen, eine starke Gemeinschaft und hohe Wohnqualität. Die Stadt bietet viele Möglichkeiten zur Teilhabe und Unterstützung.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Vielfalt</h3>
+                        <p>Pflege, Freizeit, Kultur</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-universal-access"></i></div>
+                        <h3>Barrierefreiheit</h3>
+                        <p>Wohnungen, ÖPNV</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-users"></i></div>
+                        <h3>Ehrenamt</h3>
+                        <p>Starke Gemeinschaft</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-home"></i></div>
+                        <h3>Wohnqualität</h3>
+                        <p>Eigentum, Stabilität</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Lücken & Herausforderungen -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Lücken & Herausforderungen</h1>
+                <p class="slide-intro">Trotz vieler Stärken gibt es Herausforderungen: Die Versorgung in Randbereichen, Mobilität, zielgruppenspezifische Angebote und die Koordination müssen weiter verbessert werden. Besonders für "junge Alte" fehlen passende Angebote.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Zentrale Angebote</h3>
+                        <p>Randbereiche unterversorgt</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-car"></i></div>
+                        <h3>Mobilität</h3>
+                        <p>Fahrdienste fehlen</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-friends"></i></div>
+                        <h3>Zielgruppen</h3>
+                        <p>Wenig für "junge Alte"</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Koordination</h3>
+                        <p>Infos verstreut</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Zusammenfassung & Fazit -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Zusammenfassung & Fazit</h1>
+                <div class="conclusion-content">
+                    <div class="conclusion-summary">
+                        <div class="summary-section positive">
+                            <h3><i class="fas fa-check-circle"></i> Stärken</h3>
+                            <ul>
+                                <li>Seniorengerechte Wohnsituation</li>
+                                <li>Gute ärztliche und pflegerische Versorgung</li>
+                                <li>Reiches Freizeit- und Ehrenamtsangebot</li>
+                                <li>Aktive Netzwerke von Ehrenamtlichen</li>
+                                <li>Zahlreiche kulturelle Veranstaltungen</li>
+                                <li>Soziale Teilhabe und Gemeinschaft werden gefördert</li>
+                            </ul>
+                        </div>
+                        <div class="summary-section improvement">
+                            <h3><i class="fas fa-arrow-up"></i> Verbesserungsbedarf</h3>
+                            <ul>
+                                <li>Dezentrale Versorgung und Mobilität für weniger mobile Senior:innen verbessern</li>
+                                <li>Koordination der Hilfsangebote stärken</li>
+                                <li>Angebote für spezifische Bedürfnisse (z. B. Demenz, Trauerbewältigung) ausbauen</li>
+                                <li>Finanzielle Zugänglichkeit sichern und transparenter gestalten (Altersarmut betrifft ca. 1.050 Senior:innen)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="conclusion-highlight">
+                        <h3><i class="fas fa-lightbulb"></i> Ausblick</h3>
+                        <p>Coswig hat viel erreicht, doch um den Anforderungen einer alternden Gesellschaft langfristig gerecht zu werden, sind gezielte Verbesserungen und eine stärkere Vernetzung der Angebote erforderlich.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Bildergalerie Coswig -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Coswig im Bild: Ortsteile und Strukturen</h1>
+                <div class="image-gallery">
+                    <div class="gallery-section">
+                        <h3><i class="fas fa-building"></i> Zentrale Bereiche</h3>
+                        <div class="image-grid">
+                            <div class="gallery-item">
+                                <img src="angebote/Marktplatz.jpg" alt="Marktplatz Coswig" class="gallery-image">
+                                <div class="image-caption">Marktplatz</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="angebote/Rathaus Apotheke.jpg" alt="Elbufer Coswig" class="gallery-image">
+                                <div class="image-caption">Rathaus Apotheke</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="angebote/Erstings family.jpg" alt="Autobahnanschluss A9" class="gallery-image">
+                                <div class="image-caption">Einkaufsmöglichkeiten</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-section">
+                        <h3><i class="fas fa-map-marked-alt"></i> Angebote</h3>
+                        <div class="image-grid">
+                            <div class="gallery-item">
+                                <img src="angebote/Angebot 1.jpg" alt="Angebotstafel" class="gallery-image">
+                                <div class="image-caption">Angebotstafel</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="angebote/Angebot 2.jpg" alt="Monatsangebot" class="gallery-image">
+                                <div class="image-caption">Monatsangebot</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="angebote/Angebot 3.jpg" alt="Stammtisch" class="gallery-image">
+                                <div class="image-caption">Stammtisch</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Quellenangaben -->
+        <section class="slide">
+            <div class="slide-content">
+                <h1 class="slide-title">Quellen & Literatur zur Stadtteilanalyse</h1>
+                <div class="sources-content">
+                    <div class="sources-section">
+                        <h3><i class="fas fa-book"></i> Literatur & Studien</h3>
+                        <ul class="sources-list">
+                            <li>Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR): "Sozialraumanalyse in der Stadtentwicklung", Bonn 2022</li>
+                            <li>Statistisches Landesamt Sachsen: "Demografische Entwicklung in Sachsen", Dresden 2023</li>
+                            <li>Stadt Coswig: "Seniorenleitplan Coswig 2022"</li>
+                            <li>Deutscher Verein für öffentliche und private Fürsorge: "Handbuch Sozialraumorientierung", Berlin 2021</li>
+                            <li>Häußermann, H./Siebel, W.: "Stadtsoziologie – Eine Einführung", Frankfurt/Main 2020</li>
+                        </ul>
+                    </div>
+                    <div class="sources-section">
+                        <h3><i class="fas fa-globe"></i> Online-Quellen</h3>
+                        <ul class="sources-list">
+                            <li>Stadt Coswig: <a href="https://www.coswig.de" target="_blank">www.coswig.de</a></li>
+                            <li>Statistisches Landesamt Sachsen: <a href="https://www.statistik.sachsen.de" target="_blank">statistik.sachsen.de</a></li>
+                            <li>Bundesinstitut für Bau-, Stadt- und Raumforschung: <a href="https://www.bbsr.bund.de" target="_blank">bbsr.bund.de</a></li>
+                            <li>Mehrgenerationenhaus Coswig: <a href="https://www.mehrgenerationenhaus-coswig.de" target="_blank">mehrgenerationenhaus-coswig.de</a></li>
+                            <li>Quartiersmanagement Coswig: <a href="https://www.quartier-coswig.de" target="_blank">quartier-coswig.de</a></li>
+                        </ul>
+                    </div>
+                    <div class="sources-section">
+                        <h3><i class="fas fa-image"></i> Bildquellen</h3>
+                        <ul class="sources-list">
+                            <li>Stadt Coswig (Pressefotos, Stadtarchiv): www.coswig.de</li>
+                            <li>Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank">commons.wikimedia.org</a></li>
+                            <li>OpenStreetMap-Mitwirkende: <a href="https://www.openstreetmap.org/copyright" target="_blank">openstreetmap.org/copyright</a></li>
+                            <li>Unsplash (freie Fotos): <a href="https://unsplash.com/s/photos/coswig" target="_blank">unsplash.com/s/photos/coswig</a></li>
+                            <li>Eigene Aufnahmen und Präsentationsmaterial</li>
+                            <li>Icons: Font Awesome (https://fontawesome.com)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Zusammenfassung-Button nur auf dieser Folie -->
+            <button id="show-summary-btn" style="position: fixed; top: 50%; right: 32px; z-index: 2000; background: linear-gradient(90deg, #667eea, #764ba2); color: white; border: none; border-radius: 50px; padding: 16px 28px; font-size: 1.1rem; box-shadow: 0 4px 24px rgba(102,126,234,0.10); cursor: pointer; transform: translateY(-50%);">Zusammenfassung</button>
+            <div id="summary-modal" style="display:none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(44,62,80,0.45); z-index: 3000; align-items: center; justify-content: center;">
+                <div style="background: #fff; border-radius: 18px; max-width: 700px; width: 90vw; max-height: 90vh; overflow-y: auto; box-shadow: 0 8px 40px rgba(44,62,80,0.18); padding: 36px 32px 28px 32px; position: relative;">
+                    <button id="close-summary-modal" style="position: absolute; top: 18px; right: 18px; background: none; border: none; font-size: 2rem; color: #667eea; cursor: pointer;">&times;</button>
+                    <h2 style="margin-bottom: 18px;">Zusammenfassung der Sozialraumanalyse Coswig</h2>
+                    <div style="font-size: 1.08rem; line-height: 1.7; color: #222;">
+                        <p><b>1. Einführung: Stadt Coswig im Überblick</b><br>
+                        Coswig ist eine mittelgroße Stadt im Landkreis Meißen, Sachsen, im mittleren Elbtal zwischen Dresden und Meißen. Mit ca. 20.400 Einwohnern (2022/2023) und einer Fläche von 25,9 km² ist die Stadt durch einen hohen Altersdurchschnitt (Ø 49 Jahre, 1/3 über 65) und eine hohe Eigentümerquote (über 61 %) geprägt. Die Wohnverhältnisse sind stabil und meist finanziell gesichert.</p>
+                        <p><b>2. Medizinische und pflegerische Versorgung</b><br>
+                        Coswig bietet eine sehr gute medizinische Infrastruktur: Fachkrankenhaus (Lungen- und Bronchialerkrankungen), Herzzentrum, medizinisches Versorgungszentrum, zahlreiche Fach- und Hausärzte, Apotheken und ambulante Dienste. Pflegeheime und betreutes Wohnen sind vielfältig vorhanden und barrierearm gestaltet.</p>
+                        <p><b>3. Mobilität und Nahversorgung</b><br>
+                        Die Stadt ist durch Bahn, S-Bahn, Straßenbahn, Busse und Fähren gut angebunden. Es gibt barrierefreie Zugänge, Seniorentaxis und eine breite Nahversorgung (Supermärkte, Drogerien, soziale Einrichtungen wie Tafel und Sozialkaufhaus).</p>
+                        <p><b>4. Wohnen und Pflege</b><br>
+                        Das Angebot reicht von Pflegeheimen über betreutes Wohnen bis zu barrierearmen Wohnungen. Ambulante Pflegedienste und Alltagsbegleitung sind etabliert.</p>
+                        <p><b>5. Soziale Angebote, Ehrenamt und Freizeit</b><br>
+                        Seniorentreffs, Mehrgenerationenhaus, Nachbarschaftshilfe, Quartiersmanagement, Kulturveranstaltungen (Kultursommer, Konzerte, VHS) und eine aktive Ehrenamtskultur prägen das gesellschaftliche Leben.</p>
+                        <p><b>6. Alltagsstruktur älterer Menschen</b><br>
+                        Der Alltag ist geprägt von festen Strukturen, gemeinsamen Aktivitäten, Begegnungen, Ausflügen und kulturellen Veranstaltungen.</p>
+                        <p><b>7. Stärken der Senioreninfrastruktur</b><br>
+                        Breites Angebot von Pflege bis Freizeit, barrierearme Wohnungen, gute ÖPNV-Anbindung, aktive Ehrenamtskultur, Quartiersmanagement, hohe Eigentümerquote und gute Wohnqualität.</p>
+                        <p><b>8. Lücken und Herausforderungen</b><br>
+                        Viele Angebote konzentrieren sich auf das Zentrum, Randbereiche sind teils unterversorgt. Es fehlt an zentraler Koordination, Fahrdiensten, zielgruppenspezifischen Angeboten ("junge Alte"), spezialisierten Gruppen (Demenz, Sucht, Trauer) und finanziell zugänglichen Angeboten. Nicht seniorengerechte Bereiche bestehen v.a. in Gewerbegebieten und Neucoswig.</p>
+                        <p><b>9. Fazit</b><br>
+                        Coswig bietet eine solide Infrastruktur und vielfältige Teilhabemöglichkeiten für ältere Menschen. Defizite bestehen in der dezentralen Versorgung, Mobilität und Koordination. Altersarmut ist ein wachsendes Thema. Die Stadt hat viel erreicht, muss aber gezielt nachsteuern, um den Anforderungen des demografischen Wandels gerecht zu werden.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+    // Zusammenfassung-Modal nur auf letzter Folie anzeigen
+    const showSummaryBtn = document.getElementById('show-summary-btn');
+    const summaryModal = document.getElementById('summary-modal');
+    const closeSummaryModal = document.getElementById('close-summary-modal');
+    if (showSummaryBtn && summaryModal && closeSummaryModal) {
+        showSummaryBtn.addEventListener('click', () => summaryModal.style.display = 'flex');
+        closeSummaryModal.addEventListener('click', () => summaryModal.style.display = 'none');
+        // Optional: Modal per ESC schließen
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') summaryModal.style.display = 'none';
+        });
+    }
+    </script>
+    <script>
+    (function() {
+        const overlay = document.getElementById('password-overlay');
+        const form = document.getElementById('password-form');
+        const input = document.getElementById('password-input');
+        const error = document.getElementById('password-error');
+        const correct = 'coswig';
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (input.value === correct) {
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+                // Entferne die CSS-Regel, die alle Inhalte versteckt
+                const style = document.querySelector('style');
+                if (style) {
+                    style.textContent = style.textContent.replace(/body > \*:not\(#password-overlay\) \{[\s\S]*?display: none !important;[\s\S]*?\}/, '');
+                }
+            } else {
+                error.style.display = 'block';
+                input.value = '';
+                input.focus();
+            }
+        });
+        input.addEventListener('input', function() {
+            error.style.display = 'none';
+        });
+    })();
+    </script>
+</body>
+</html> 

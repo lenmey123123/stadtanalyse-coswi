@@ -254,7 +254,7 @@
     <nav class="presentation-nav">
         <div class="nav-controls">
             <button class="nav-btn" onclick="previousSlide()"><i class="fas fa-chevron-left"></i></button>
-            <span class="slide-counter">1 / 12</span>
+            <span class="slide-counter">1 / 14</span>
             <button class="nav-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="nav-indicators">
@@ -271,6 +271,7 @@
             <div class="indicator" onclick="goToSlide(10)"></div>
             <div class="indicator" onclick="goToSlide(11)"></div>
             <div class="indicator" onclick="goToSlide(12)"></div>
+            <div class="indicator" onclick="goToSlide(13)"></div>
         </div>
     </nav>
 
@@ -280,20 +281,126 @@
             <div class="slide-content">
                 <div class="title-content">
                     <h1 class="main-title">Stadtteil- und Sozialraumanalyse Coswig – Fokus auf ältere Menschen</h1>
-                    <h2 class="subtitle">Potenziale erkennen, Teilhabe stärken</h2>
-                    <div class="title-details">
-                        <p class="presenters">Vorgetragen von: Liliane, Lennard, Laura </p>
-                        <p class="date">Datum: 26.06.2025</p>
-                        <p class="university">Universität: SRH University of Applied Sciences</p>
-                    </div>
-                </div>
-                <div class="title-visual">
-                    <img src="public/Coswig_in_MEI.svg.png" alt="Stadtzentrum Coswig" class="title-image" style="max-width: 960px; max-height: 960px; border-radius: 16px; box-shadow: 0 4px 24px rgba(102,126,234,0.12); margin-top: 12px;" />
+                    <p class="subtitle">Eine methodische Analyse der sozialen Strukturen, Herausforderungen und Entwicklungspotenziale für die ältere Bevölkerung in Coswig</p>
+                    <img src="public/Coswig_in_MEI.svg.png" alt="Coswig Stadtansicht" style="max-width: 960px; max-height: 960px; border-radius: 16px; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
                 </div>
             </div>
         </section>
 
-        <!-- Slide 2: Coswig – Lage & Überblick -->
+        <!-- Slide 2: Gliederung -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2><i class="fas fa-list-ul" style="color: #667eea; margin-right: 15px;"></i>Gliederung der Präsentation</h2>
+                
+                <div class="outline-container" style="margin-top: 40px;">
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">1</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Titel & Einführung</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Stadtteil- und Sozialraumanalyse Coswig – Fokus auf ältere Menschen</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">3</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Coswig – Lage & Überblick</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Geografische Lage und zentrale Position zwischen Dresden und Meißen</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">4</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Coswig im Überblick</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Demografische Entwicklung, soziale Strukturen und räumliche Gegebenheiten</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">5</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Soziale Infrastruktur</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Bestehende soziale Einrichtungen und Angebote für ältere Menschen</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">6</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Medizin & Pflege</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Gesundheitsversorgung, Pflegeheime und ambulante Dienste</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">7</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Mobilität & Nahversorgung</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">ÖPNV, Barrierefreiheit und lokale Versorgung</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">8</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Soziale Angebote & Freizeit</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Kultur, Ehrenamt und gesellschaftliche Teilhabe</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">9</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Alltag älterer Menschen</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Tagesstrukturen und praktische Angebote</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">10</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Stärken</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Positive Aspekte der Senioreninfrastruktur</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">11</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Lücken & Herausforderungen</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Identifizierte Probleme und Verbesserungsbedarf</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">12</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Zusammenfassung & Fazit</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Bewertung und Ausblick</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">13</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Bildergalerie Coswig</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Ortsteile und Strukturen im Bild</p>
+                        </div>
+                    </div>
+
+                    <div class="outline-item" style="display: flex; align-items: center; margin-bottom: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border-left: 4px solid #667eea;">
+                        <div class="outline-number" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 20px; font-size: 18px;">14</div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #2c3e50;">Quellen & Literatur</h3>
+                            <p style="margin: 0; color: #5a6c7d; font-size: 16px;">Literatur, Online-Quellen und Bildquellen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Coswig – Lage & Überblick -->
         <section class="slide">
             <div class="slide-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <h1 class="slide-title">Coswig – Lage & Überblick</h1>
@@ -302,7 +409,7 @@
             </div>
         </section>
 
-        <!-- Slide 3: Coswig im Überblick (mit den vier Feature-Cards) -->
+        <!-- Slide 4: Coswig im Überblick (mit den vier Feature-Cards) -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Coswig im Überblick</h1>
@@ -332,7 +439,7 @@
             </div>
         </section>
 
-        <!-- Slide 4: Soziale Infrastruktur – Beispiel -->
+        <!-- Slide 5: Soziale Infrastruktur – Beispiel -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Soziale Infrastruktur – Beispiel</h1>
@@ -342,7 +449,7 @@
             </div>
         </section>
 
-        <!-- Slide 5: Medizin & Pflege -->
+        <!-- Slide 6: Medizin & Pflege -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Medizin & Pflege</h1>
@@ -365,7 +472,7 @@
             </div>
         </section>
 
-        <!-- Slide 6: Mobilität & Nahversorgung -->
+        <!-- Slide 7: Mobilität & Nahversorgung -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Mobilität & Nahversorgung</h1>
@@ -388,7 +495,7 @@
             </div>
         </section>
 
-        <!-- Slide 7: Soziale Angebote & Freizeit -->
+        <!-- Slide 8: Soziale Angebote & Freizeit -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Soziale Angebote & Freizeit</h1>
@@ -411,7 +518,7 @@
             </div>
         </section>
 
-        <!-- Slide 8: Alltag älterer Menschen -->
+        <!-- Slide 9: Alltag älterer Menschen -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Alltag älterer Menschen</h1>
@@ -437,7 +544,7 @@
             </div>
         </section>
 
-        <!-- Slide 9: Stärken der Senioreninfrastruktur -->
+        <!-- Slide 10: Stärken der Senioreninfrastruktur -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Stärken</h1>
@@ -467,7 +574,7 @@
             </div>
         </section>
 
-        <!-- Slide 10: Lücken & Herausforderungen -->
+        <!-- Slide 11: Lücken & Herausforderungen -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Lücken & Herausforderungen</h1>
@@ -497,7 +604,7 @@
             </div>
         </section>
 
-        <!-- Slide 11: Zusammenfassung & Fazit -->
+        <!-- Slide 12: Zusammenfassung & Fazit -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Zusammenfassung & Fazit</h1>
@@ -532,7 +639,7 @@
             </div>
         </section>
 
-        <!-- Slide 12: Bildergalerie Coswig -->
+        <!-- Slide 13: Bildergalerie Coswig -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Coswig im Bild: Ortsteile und Strukturen</h1>
@@ -575,7 +682,7 @@
             </div>
         </section>
 
-        <!-- Slide 13: Quellenangaben -->
+        <!-- Slide 14: Quellenangaben -->
         <section class="slide">
             <div class="slide-content">
                 <h1 class="slide-title">Quellen & Literatur zur Stadtteilanalyse</h1>
